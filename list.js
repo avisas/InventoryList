@@ -16,14 +16,18 @@ function addItem(e) {
   let newItemValue = newItem.value;
   const li = document.createElement('li');
   li.className = 'list-group-item';
-  li.appendChild(document.createTextNode(newItemValue));  // creates an element then you have to do smth with it.
+  //li.appendChild(document.createTextNode(newItemValue));  // creates an element then you have to do smth with it.
+  const p = document.createElement('p');
+  p.className = 'cont-item';
+  li.appendChild(p);
+  p.appendChild(document.createTextNode(newItemValue));
   const quantityAdded = document.createElement('span');
   quantityAdded.innerHTML = ' 1';
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'btn btn-danger btn-sm delete';
   deleteBtn.innerHTML = '<i class="fas fa-trash-alt" aria-hidden="true"></i>';
   //deleteBtn.appendChild(document.createTextNode('X'));
-  li.appendChild(quantityAdded);
+  p.appendChild(quantityAdded);
   li.appendChild(deleteBtn);
   listItems.appendChild(li);
   console.log(listItems);
