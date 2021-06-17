@@ -24,6 +24,7 @@ button {
   float: right;
 }
 
-.quantity {
-  margin-left: 55rem;
+p {
+  display: flex;
+  justify-content: space-between;
 }
