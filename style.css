@@ -1,0 +1,29 @@
+.bg-success {
+  background-color: #1985e0! important;
+}
+
+a {
+  color: #fbfbfb;
+}
+
+.btn-success{
+  background-color: #1985e0! important;
+  border-color: ##1985e0! important;
+  hover:
+}
+
+.btn-success:hover {
+  background-color: #1b66a7! important;
+}
+
+h6 {
+  margin-right: 5rem;
+}
+
+button {
+  float: right;
+}
+
+.quantity {
+  margin-left: 55rem;
+}
