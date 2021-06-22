@@ -63,8 +63,14 @@ function filterItems(e){
       item.style.display = 'none';
     };
   });
+  // update or render interface
 };
 
 function removeList() {
-listItems.remove();
+  const items = listItems.getElementsByTagName('li');
+  Array.from(items).forEach((item) => {
+    for(let i=0; i < items.length; i++){
+      item.empty();
+    }
+  });
 };
