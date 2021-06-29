@@ -38,9 +38,8 @@ function addItem(event) {
 // Counter of Items
 function itemCounter(item) {
   const newItemVal = newItem.value;
-  const arrElements = newItemVal.split(' ');
-  const char = Array.from(newItemVal);
-  console.log(char);
+  const arrElements = newItemVal.split('');  // returns an array with characters
+
 }
 
 function removeItem(item) {
