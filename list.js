@@ -1,4 +1,4 @@
-
+document.createElement('p');
 const addForm = document.getElementById('add-form');
 let listItems = document.getElementById('list-items');
 const filter = document.getElementById('search');
@@ -39,7 +39,6 @@ function addItem(event) {
 function itemCounter(item) {
   const newItemVal = newItem.value;
   const arrElements = newItemVal.split('');  // returns an array with characters
-
 }
 
 function removeItem(item) {
@@ -54,7 +53,7 @@ function removeItem(item) {
 function filterItems(e){
   const text = e.target.value.toLowerCase();
   const items = listItems.getElementsByTagName('li');
-// array(from) creates arrays  // for each -> executes func x each elm of array
+  // array(from) creates arrays  // for each -> executes func x each elm of array
   Array.from(items).forEach((item) => {
     const itemName = item.firstChild.textContent;
     if(itemName.toLowerCase().includes(text)){
@@ -68,22 +67,7 @@ function filterItems(e){
 
 function removeList() {
   let items = listItems.getElementsByTagName('li');
-  for (let i = 0; i < items.length; i++) {
-    let l = items[i];
-    l.remove();
-  //  let ph = listItems.getElementsByClassName('cont-item');
-  //  document.getElementById('quantity').innerHTML = '';
-  //  let bt = listItems.getElementsByClassName('btn btn-danger btn-sm delete');
-  //  ph.value = '';
-  //  bt.remove();
-};
-  //document.getElementById('quantity').innerHTML = '';
-  //let bt = listItems.getElementsByClassName('btn btn-danger btn-sm delete');
-  //items = [];
-  //bt.remove();
-  //addItem(event);
-
-  //for(let i=0; i <= items.length -1; i++){
-  //  items = [];
-//  };
+  Array.from(items).forEach((item) => {
+    item.remove();
+  });
 };
