@@ -1,6 +1,6 @@
 
 const addForm = document.getElementById('add-form');
-const listItems = document.getElementById('list-items');
+let listItems = document.getElementById('list-items');
 const filter = document.getElementById('search');
 const resetList = document.getElementById('reset');
 let newItem = document.getElementById('item');
@@ -10,9 +10,10 @@ addForm.addEventListener('submit', addItem);
 listItems.addEventListener('click', removeItem);
 filter.addEventListener('keyup', filterItems);
 resetList.addEventListener('click', removeList);
+counter.addEventListener('click', itemCounter);
 
-function addItem(e) {
-  e.preventDefault();
+function addItem(event) {
+  event.preventDefault();
   let newItemValue = newItem.value;
   const li = document.createElement('li');
   li.className = 'list-group-item';
@@ -22,6 +23,7 @@ function addItem(e) {
   li.appendChild(p);
   p.appendChild(document.createTextNode(newItemValue));
   const quantityAdded = document.createElement('span');
+  quantityAdded.className = 'quantity';
   quantityAdded.innerHTML = ' 1';
   const deleteBtn = document.createElement('button');
   deleteBtn.className = 'btn btn-danger btn-sm delete';
@@ -30,7 +32,6 @@ function addItem(e) {
   p.appendChild(quantityAdded);
   li.appendChild(deleteBtn);
   listItems.appendChild(li);
-  console.log(listItems);
   newItem.value = '';
 };
 
@@ -67,10 +68,23 @@ function filterItems(e){
 };
 
 function removeList() {
-  const items = listItems.getElementsByTagName('li');
-  Array.from(items).forEach((item) => {
-    for(let i=0; i < items.length; i++){
-      item.empty();
-    }
-  });
+  let items = listItems.getElementsByTagName('li');
+  for (let i = 0; i < items.length; i++) {
+    let l = items[i];
+    l.remove();
+  //  let ph = listItems.getElementsByClassName('cont-item');
+  //  document.getElementById('quantity').innerHTML = '';
+  //  let bt = listItems.getElementsByClassName('btn btn-danger btn-sm delete');
+  //  ph.value = '';
+  //  bt.remove();
+};
+  //document.getElementById('quantity').innerHTML = '';
+  //let bt = listItems.getElementsByClassName('btn btn-danger btn-sm delete');
+  //items = [];
+  //bt.remove();
+  //addItem(event);
+
+  //for(let i=0; i <= items.length -1; i++){
+  //  items = [];
+//  };
 };
